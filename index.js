@@ -1,4 +1,9 @@
 function info(time) {
+  let now = new Date();
+
+  let h2 = document.querySelector("h2");
+  let h3 = document.querySelector("h3");
+
   let date = now.getDate();
   let hours = now.getHours();
   let minutes = now.getMinutes();
