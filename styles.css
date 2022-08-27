@@ -1,3 +1,13 @@
+body {
+  height: 1200px;
+  background-image: radial-gradient(
+    circle 180px at 95% 3%,
+    white,
+    yellow,
+    lightyellow,
+    lightblue
+  );
+}
 h1 {
   color: black;
   font-family: "Times New Roman", Times, serif;
