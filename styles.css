@@ -75,7 +75,7 @@ button {
   background: #1a64d6;
   color: #fff;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 18px;
   padding: 4px 12px;
   border-radius: 5px;
   transition: all 200ms ease;
@@ -87,4 +87,16 @@ button:hover {
   background: white;
   color: #1a64d6;
   border: 1px solid #1a64d6;
+}
+#search {
+  border: 1px solid #1a64d6;
+  background: #1a64d6;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 4px 12px;
+  border-radius: 5px;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  cursor: pointer;
 }
