@@ -1,7 +1,7 @@
 body {
   height: 1200px;
   background-image: radial-gradient(
-    circle 180px at 95% 3%,
+    circle 200px at 95% 2%,
     white,
     yellow,
     lightyellow,
@@ -23,6 +23,7 @@ h2 {
   text-align: right;
   bottom: 76px;
   right: 10px;
+  font-weight: bold;
 }
 
 h3 {
@@ -33,6 +34,7 @@ h3 {
   margin-top: 0px;
   position: relative;
   bottom: 80px;
+  font-weight: bold;
 }
 h4 {
   text-align: center;
