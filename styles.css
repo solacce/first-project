@@ -43,11 +43,7 @@ h4 {
 h5 {
   text-align: center;
 }
-#temp {
-  text-align: center;
-  font-size: 90px;
-  font-family: "Times New Roman", Times, serif;
-}
+
 h6 {
   text-align: left;
 }
@@ -67,7 +63,12 @@ h6 {
   font-size: 13pt;
   width: 40%;
 }
-#celsius {
+#temperature {
+  text-align: center;
+  font-size: 90px;
+  font-family: "Times New Roman", Times, serif;
+}
+.units {
   text-align: center;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
@@ -119,6 +120,14 @@ button:hover {
 #github-link {
   text-decoration: none;
 }
-.farenheit {
+#fahrenheit {
   text-decoration: none;
+}
+#celsius {
+  text-decoration: none;
+}
+.units .active {
+  text-decoration: none;
+  color: black;
+  cursor: default;
 }
