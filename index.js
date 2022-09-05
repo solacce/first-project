@@ -65,20 +65,28 @@ let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
 function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  celsiusTemperature = response.data.main.temp;
+  console.log(response.data);
 
-  document.querySelector("#temperature").innerHTML =
-    Math.round(celsiusTemperature);
-  document.querySelector("#country").innerHTML = response.data.sys.country;
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let descriptionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
 
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = response.data.sys.country;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.weather[0].main;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  iconElement.setAttribute("alt", response.data.weather[0].main);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function showCity(city) {
@@ -96,8 +104,6 @@ function handleSubmit(event) {
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", handleSubmit);
-
-showCity("Lagos");
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
