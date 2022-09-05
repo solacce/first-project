@@ -61,9 +61,6 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let button = document.querySelector("button");
-button.addEventListener("click", getCurrentPosition);
-
 function displayWeatherCondition(response) {
   console.log(response.data);
 
@@ -95,15 +92,13 @@ function showCity(city) {
 
   axios.get(ApiUrl).then(displayWeatherCondition);
 }
+showCity(Lagos);
 
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
   showCity(city);
 }
-
-let searchForm = document.querySelector("#city-form");
-searchForm.addEventListener("submit", handleSubmit);
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -132,3 +127,9 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let button = document.querySelector("button");
+button.addEventListener("click", getCurrentPosition);
+
+let searchForm = document.querySelector("#city-form");
+searchForm.addEventListener("submit", handleSubmit);
