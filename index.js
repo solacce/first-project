@@ -72,6 +72,8 @@ function displayWeatherCondition(response) {
   let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.main.temp;
+
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
@@ -83,7 +85,6 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
-  celsiusTemperature = response.data.main.temp;
 }
 
 function showCity(city) {
@@ -92,7 +93,6 @@ function showCity(city) {
 
   axios.get(ApiUrl).then(displayWeatherCondition);
 }
-showCity(Lagos);
 
 function handleSubmit(event) {
   event.preventDefault();
