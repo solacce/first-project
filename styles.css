@@ -18,10 +18,10 @@ h1 {
 h2 {
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
-  position: relative;
+  position: absolute;
   display: block;
   text-align: right;
-  bottom: 76px;
+  bottom: 780px;
   right: 10px;
   font-weight: bold;
 }
@@ -32,8 +32,9 @@ h3 {
   margin-right: 10px;
   font-family: "Times New Roman", Times, serif;
   margin-top: 0px;
-  position: relative;
-  bottom: 80px;
+  position: absolute;
+  bottom: 760px;
+  right: 5px;
   font-weight: bold;
 }
 h4 {
