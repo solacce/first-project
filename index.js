@@ -40,6 +40,30 @@ function info(time) {
   h3.innerHTML = `${day}, ${hours}:${minutes}`;
 }
 info();
+function displayForecast(params) {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+              <div class="col-2">
+                <div class="weather-forecast-date">Thu</div>
+                <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max"> 18° </span>
+                  <span class="weather-forecast-temperature-min"> 12° </span>
+                </div>
+              </div>
+            </div>
+          </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showPosition(position) {
   let ApiKey = "073856d4c00a8e049aa1d750c90eefe5";
@@ -133,3 +157,4 @@ button.addEventListener("click", getCurrentPosition);
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", handleSubmit);
+displayForecast();
