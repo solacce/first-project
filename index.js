@@ -63,7 +63,7 @@ function displayForecast() {
                   <span class="weather-forecast-temperature-max"> 18° </span>
                   <span class="weather-forecast-temperature-min"> 12° </span>
                 </div>
-          </div>`;
+           </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -88,6 +88,14 @@ function showWeather(response) {
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "073856d4c00a8e049aa1d750c90eefe5";
+
+  let apiUrl = `https://api.openweather.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  console.log(apiUrl);
 }
 
 function displayWeatherCondition(response) {
@@ -114,6 +122,8 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 
 function showCity(city) {
